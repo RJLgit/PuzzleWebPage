@@ -7,10 +7,12 @@ class Question {
 		this.theImage = imag;
 	}
 }
-
+let question1Options = ["D4", "A6", "E3", "B2", "D1", "A2"];
 let question2Options = ["40", "22", "49", "5", "17", "36"];
 
-Question question2 = new Question("What is the next number in the sequence shown above?", question2Options, 3, "Images/sequenceImage.png");
+
+Question question1 = new Question("Find the ballet dancer in the Flamingos. What coordinates is it located at?", question1Options, 5, "Images/findBalletDancerGrid.PNG");
+Question question2 = new Question("What is the next number in the sequence shown above?", question2Options, 3, "Images/sequenceImage.PNG");
 
 let questionText;
 let questionImage;
