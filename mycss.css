@@ -5,3 +5,8 @@
 #question {
 	margin-top: 20px;
 }
+#retryButton {
+	margin-top: 20px;
+	margin-bottom: 200px;
+	display: none;
+}
