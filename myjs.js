@@ -4,6 +4,7 @@ let questionAnswer;
 let submitButton;
 
 function answerSubmitted() {
+	console.log(questionAnswer.value)
 	console.log("answer done");
 }
 
