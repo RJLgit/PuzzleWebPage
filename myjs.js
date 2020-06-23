@@ -28,6 +28,7 @@ let questionText;
 let questionImage;
 let questionAnswer;
 let submitButton;
+let retryButton;
 let questionNumber;
 let optionOne;
 let optionTwo;
@@ -49,7 +50,11 @@ function showQuestion() {
 }
 
 function showFinalScreen() {
+	questionImage.style.display = 'none';
+	submitButton.style.display = 'none';
+	questionAnswer.style.display = 'none';
 	questionText.textContent = "Your score was: " + correctAnswers;
+	retryButton.style.display = 'block';
 }
 
 function answerSubmitted() {
@@ -63,7 +68,17 @@ function answerSubmitted() {
 		questionNumber++;
 		showQuestion();
 	}
-	
+}
+
+function retry() {
+	correctAnswers = 0;
+	questionNumber = 0;
+	questionImage.style.display = 'block';
+	submitButton.style.display = 'block';
+	questionAnswer.style.display = 'block';
+	retryButton.style.display = 'none';
+
+	showQuestion();
 }
 
 
@@ -73,6 +88,8 @@ function init() {
 	questionAnswer = document.querySelector('#selectHolder');
 	submitButton = document.querySelector('#submitButton');
 	submitButton.addEventListener('click', answerSubmitted);
+	retryButton = document.querySelector('#retryButton');
+	retryButton.addEventListener('click', retry);
 	questionNumber = 0;
 	optionOne = document.querySelector('#optionOne');
 	optionTwo = document.querySelector('#optionTwo');
