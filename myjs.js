@@ -9,10 +9,20 @@ class Question {
 }
 let question1Options = ["D4", "A6", "E3", "B2", "D1", "A2"];
 let question2Options = ["40", "22", "49", "5", "17", "36"];
+let question3Options = ["Calmorous", "Vulgar", "Boorish", "Garrulous", "Stressed", "Condescending"];
+let question4Options = ["Softball", "Ice Hockey", "Golf", "Soccer", "Cricket", "Rugby"];
+let question5Options = ["8 feet", "15 feet", "10 feet", "6 feet", "12 feet", "9 feet"];
+
 
 
 Question question1 = new Question("Find the ballet dancer in the Flamingos. What coordinates is it located at?", question1Options, 5, "Images/findBalletDancerGrid.PNG");
 Question question2 = new Question("What is the next number in the sequence shown above?", question2Options, 3, "Images/sequenceImage.PNG");
+Question question3 = new Question("Which word is most similar to loquacious?", question3Options, 4, "Images/question3Image.PNG");
+Question question4 = new Question("Which of the words are the odd one out?", question4Options, 2, "Images/question4Image.PNG");
+Question question5 = new Question("How far are they apart?", question5Options, 3, "Images/question5Image.PNG");
+
+let myQuestions = [question1, question2, question3, question4, question5];
+
 
 let questionText;
 let questionImage;
@@ -25,9 +35,22 @@ let optionThree;
 let optionFour;
 let optionFive;
 let optionSix;
+let correctAnswers = 0;
+
+function showQuestion() {
+	questionText.text = myQuestions[questionNumber].theQuestion;
+	questionImage.src = myQuestions[questionNumber].theImage;
+	optionOne.text = myQuestions[questionNumber].theOptions[0];
+	optionTwo.text = myQuestions[questionNumber].theOptions[1];
+	optionThree.text = myQuestions[questionNumber].theOptions[2];
+	optionFour.text = myQuestions[questionNumber].theOptions[3];
+	optionFive.text = myQuestions[questionNumber].theOptions[4];
+	optionSix.text = myQuestions[questionNumber].theOptions[5];
+}
 
 function answerSubmitted() {
-	console.log(questionAnswer.value)
+
+	console.log(questionAnswer.value);
 	console.log("answer done");
 }
 
@@ -45,6 +68,7 @@ function init() {
 	optionFour = document.querySelector('#optionFour');
 	optionFive = document.querySelector('#optionFive');
 	optionSix = document.querySelector('#optionSix');
+	showQuestion();
 }
 
 window.onload = init;
