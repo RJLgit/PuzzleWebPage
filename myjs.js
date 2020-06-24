@@ -47,6 +47,7 @@ function showQuestion() {
 	optionFour.text = myQuestions[questionNumber].theOptions[3];
 	optionFive.text = myQuestions[questionNumber].theOptions[4];
 	optionSix.text = myQuestions[questionNumber].theOptions[5];
+	questionAnswer.selectedIndex = 0;
 }
 
 function showFinalScreen() {
