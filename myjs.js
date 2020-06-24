@@ -37,6 +37,7 @@ let optionFour;
 let optionFive;
 let optionSix;
 let correctAnswers = 0;
+let myProgressBar;
 
 function showQuestion() {
 	questionText.textContent = myQuestions[questionNumber].theQuestion;
@@ -48,6 +49,7 @@ function showQuestion() {
 	optionFive.text = myQuestions[questionNumber].theOptions[4];
 	optionSix.text = myQuestions[questionNumber].theOptions[5];
 	questionAnswer.selectedIndex = 0;
+	myProgressBar.style.width = (questionNumber / myQuestions.length) * 100 + "%";
 }
 
 function showFinalScreen() {
@@ -56,6 +58,7 @@ function showFinalScreen() {
 	questionAnswer.style.display = 'none';
 	questionText.textContent = "Your score was: " + correctAnswers;
 	retryButton.style.display = 'block';
+	myProgressBar.style.width = "100%";
 }
 
 function answerSubmitted() {
@@ -104,6 +107,7 @@ function init() {
 	optionFour = document.querySelector('#optionFour');
 	optionFive = document.querySelector('#optionFive');
 	optionSix = document.querySelector('#optionSix');
+	myProgressBar = document.querySelector('#myProgressBar');
 	showQuestion();
 }
 
