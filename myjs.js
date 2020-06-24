@@ -59,7 +59,10 @@ function showFinalScreen() {
 }
 
 function answerSubmitted() {
-	if (questionAnswer.value == myQuestions[questionNumber].theAnswer) {
+	if (questionAnswer.selectedIndex == 0) {
+		
+	} else {
+		if (questionAnswer.value == myQuestions[questionNumber].theAnswer) {
 		correctAnswers++;
 	}
 	if (questionNumber >= myQuestions.length - 1)
@@ -69,6 +72,9 @@ function answerSubmitted() {
 		questionNumber++;
 		showQuestion();
 	}
+	}
+
+	
 }
 
 function retry() {
