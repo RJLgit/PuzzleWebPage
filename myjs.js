@@ -38,6 +38,7 @@ let optionFive;
 let optionSix;
 let correctAnswers = 0;
 let myProgressBar;
+let countdownUi;
 
 function showQuestion() {
 	questionText.textContent = myQuestions[questionNumber].theQuestion;
@@ -91,6 +92,20 @@ function retry() {
 	showQuestion();
 }
 
+function setUpTimer() {
+	let endTime = new Date().getTime()  + (2 * 60000);
+	let interval = setInterval(function() {
+		let now = new Date().getTime();
+		let distance = endTime - now;
+		let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+		countdownUi.innerHTML = "Time left: " + minutes + " minutes " + seconds + " seconds.";
+		if (distance < 0) {
+			clearInterval(interval);
+			countdownUi.innerHTML = "Time expired.";
+		} 
+	}, 1000)
+}
 
 function init() {
 	questionText = document.querySelector('#question');
@@ -108,7 +123,9 @@ function init() {
 	optionFive = document.querySelector('#optionFive');
 	optionSix = document.querySelector('#optionSix');
 	myProgressBar = document.querySelector('#myProgressBar');
+	countdownUi = document.querySelector('#countdown');
 	showQuestion();
+	setUpTimer();
 }
 
 window.onload = init;
