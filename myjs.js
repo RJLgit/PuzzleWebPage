@@ -56,7 +56,7 @@ function showFinalScreen() {
 	questionImage.style.display = 'none';
 	submitButton.style.display = 'none';
 	questionAnswer.style.display = 'none';
-	questionText.textContent = "Your score was: " + correctAnswers;
+	questionText.textContent = "Your score was: " + correctAnswers + " out of " + myQuestions.length;
 	retryButton.style.display = 'block';
 	myProgressBar.style.width = "100%";
 }
