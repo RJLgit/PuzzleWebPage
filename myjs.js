@@ -65,13 +65,13 @@ function showFinalScreen() {
 	countdownUi.style.display = 'none';
 	let timeLeftText;
 	if (timeLeft > 0) {
-		timeLeftText = "\n\nTime left: " +  minutes + " minutes " + seconds + " seconds.";
+		timeLeftText = ". Your time left was: " +  minutes + " minutes " + seconds + " seconds.";
 	} else {
-		timeLeftText = "\n\nTime Expired";
+		timeLeftText = ". You didn't finish in time";
 	}
 	
 	questionText.textContent = "Your score was: " + correctAnswers + " out of " + myQuestions.length
-								+ timeLeftText;
+							 + timeLeftText;
 	retryButton.style.display = 'block';
 	myProgressBar.style.width = "100%";
 }
