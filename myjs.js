@@ -39,6 +39,7 @@ let optionSix;
 let correctAnswers = 0;
 let myProgressBar;
 let countdownUi;
+let endTime;
 
 function showQuestion() {
 	questionText.textContent = myQuestions[questionNumber].theQuestion;
@@ -54,10 +55,22 @@ function showQuestion() {
 }
 
 function showFinalScreen() {
+	let now = new Date().getTime();
+	let timeLeft = endTime - now;
+	let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+	let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 	questionImage.style.display = 'none';
 	submitButton.style.display = 'none';
 	questionAnswer.style.display = 'none';
-	questionText.textContent = "Your score was: " + correctAnswers + " out of " + myQuestions.length;
+	let timeLeftText;
+	if (timeLeft > 0) {
+		timeLeftText = "\n\nTime left: " +  minutes + " minutes " + seconds + " seconds.";
+	} else {
+		timeLeftText = "\n\nTime Expired";
+	}
+	
+	questionText.textContent = "Your score was: " + correctAnswers + " out of " + myQuestions.length
+								+ timeLeftText;
 	retryButton.style.display = 'block';
 	myProgressBar.style.width = "100%";
 }
@@ -90,10 +103,11 @@ function retry() {
 	retryButton.style.display = 'none';
 
 	showQuestion();
+	setUpTimer();
 }
 
 function setUpTimer() {
-	let endTime = new Date().getTime()  + (2 * 60000);
+	endTime = new Date().getTime()  + (2 * 60000);
 	let interval = setInterval(function() {
 		let now = new Date().getTime();
 		let distance = endTime - now;
