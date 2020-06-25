@@ -62,6 +62,7 @@ function showFinalScreen() {
 	questionImage.style.display = 'none';
 	submitButton.style.display = 'none';
 	questionAnswer.style.display = 'none';
+	countdownUi.style.display = 'none';
 	let timeLeftText;
 	if (timeLeft > 0) {
 		timeLeftText = "\n\nTime left: " +  minutes + " minutes " + seconds + " seconds.";
@@ -101,6 +102,7 @@ function retry() {
 	submitButton.style.display = 'block';
 	questionAnswer.style.display = 'block';
 	retryButton.style.display = 'none';
+	countdownUi.style.display = 'block';
 
 	showQuestion();
 	setUpTimer();
