@@ -116,7 +116,7 @@ function setUpTimer() {
 		let distance = endTime - now;
 		let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 		let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-		countdownUi.innerHTML = "Time left: " + minutes + " minutes " + seconds + " seconds.";
+		countdownUi.innerHTML = `Time left: ${minutes} minutes ${seconds} seconds.`;
 		if (distance < 0) {
 			clearInterval(interval);
 			countdownUi.innerHTML = "Time expired.";
