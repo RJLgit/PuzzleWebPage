@@ -51,7 +51,6 @@ function showQuestion() {
 	optionFour.text = myQuestions[questionNumber].theOptions[3];
 	optionFive.text = myQuestions[questionNumber].theOptions[4];
 	optionSix.text = myQuestions[questionNumber].theOptions[5];
-	//Resets the drop down menu to be the first item
 	questionAnswer.selectedIndex = 0;
 	questionHeader.textContent = `Question ${questionNumber + 1} of ${myQuestions.length}`
 	myProgressBar.style.width = (questionNumber / myQuestions.length) * 100 + "%";
@@ -64,7 +63,6 @@ function showFinalScreen() {
 	let timeLeft = endTime - now;
 	let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
 	let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-	//questionImage.style.display = 'none';
 	submitButton.style.display = 'none';
 	questionAnswer.style.display = 'none';
 	countdownUi.style.display = 'none';
@@ -108,7 +106,6 @@ function answerSubmitted() {
 function retry() {
 	correctAnswers = 0;
 	questionNumber = 0;
-	//questionImage.style.display = 'block';
 	imageContainer.style.display = 'block';
 	submitButton.style.display = 'block';
 	questionAnswer.style.display = 'block';
