@@ -2,8 +2,10 @@
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
-#question {
+#questionHeader {
 	margin-top: 20px;
+	margin-bottom: 0px;
+	font-weight: bold;
 }
 #retryButton {
 	margin-top: 20px;
