@@ -19,3 +19,14 @@
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
+#questionImage {
+	max-width: 100%;
+  height: 100%;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+#imageContainer {
+	width: 100%;
+	height: 500px;
+}

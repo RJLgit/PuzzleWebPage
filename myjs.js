@@ -36,6 +36,7 @@ let optionSix;
 let myProgressBar;
 let countdownUi;
 let questionHeader;
+let imageContainer;
 //Variables which store the current question number, current score and the end time when quiz finished
 let endTime;
 let questionNumber;
@@ -63,10 +64,11 @@ function showFinalScreen() {
 	let timeLeft = endTime - now;
 	let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
 	let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-	questionImage.style.display = 'none';
+	//questionImage.style.display = 'none';
 	submitButton.style.display = 'none';
 	questionAnswer.style.display = 'none';
 	countdownUi.style.display = 'none';
+	imageContainer.style.display = 'none';
 	let timeLeftText;
 	if (timeLeft > 0) {
 		timeLeftText = `Your time left was: ${minutes} minutes ${seconds} seconds.`;
@@ -106,7 +108,8 @@ function answerSubmitted() {
 function retry() {
 	correctAnswers = 0;
 	questionNumber = 0;
-	questionImage.style.display = 'block';
+	//questionImage.style.display = 'block';
+	imageContainer.style.display = 'block';
 	submitButton.style.display = 'block';
 	questionAnswer.style.display = 'block';
 	retryButton.style.display = 'none';
@@ -151,6 +154,7 @@ function init() {
 	myProgressBar = document.querySelector('#myProgressBar');
 	countdownUi = document.querySelector('#countdown');
 	questionHeader = document.querySelector('#questionHeader');
+	imageContainer = document.querySelector('#imageContainer');
 	//Shows the first question and sets up the timer
 	showQuestion();
 	setUpTimer();
