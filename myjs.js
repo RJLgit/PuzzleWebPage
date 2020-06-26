@@ -40,6 +40,7 @@ let correctAnswers = 0;
 let myProgressBar;
 let countdownUi;
 let endTime;
+let questionHeader;
 
 function showQuestion() {
 	questionText.textContent = myQuestions[questionNumber].theQuestion;
@@ -51,6 +52,7 @@ function showQuestion() {
 	optionFive.text = myQuestions[questionNumber].theOptions[4];
 	optionSix.text = myQuestions[questionNumber].theOptions[5];
 	questionAnswer.selectedIndex = 0;
+	questionHeader.textContent = `Question ${questionNumber + 1} of ${myQuestions.length}`
 	myProgressBar.style.width = (questionNumber / myQuestions.length) * 100 + "%";
 }
 
@@ -65,13 +67,12 @@ function showFinalScreen() {
 	countdownUi.style.display = 'none';
 	let timeLeftText;
 	if (timeLeft > 0) {
-		timeLeftText = ". Your time left was: " +  minutes + " minutes " + seconds + " seconds.";
+		timeLeftText = `Your time left was: ${minutes} minutes ${seconds} seconds.`;
 	} else {
-		timeLeftText = ". You didn't finish in time";
+		timeLeftText = "You didn't finish in time";
 	}
-	
-	questionText.textContent = "Your score was: " + correctAnswers + " out of " + myQuestions.length
-							 + timeLeftText;
+	questionHeader.textContent = `Your score was: ${correctAnswers} out of ${myQuestions.length}`;
+	questionText.textContent = timeLeftText;
 	retryButton.style.display = 'block';
 	myProgressBar.style.width = "100%";
 }
@@ -140,6 +141,7 @@ function init() {
 	optionSix = document.querySelector('#optionSix');
 	myProgressBar = document.querySelector('#myProgressBar');
 	countdownUi = document.querySelector('#countdown');
+	questionHeader = document.querySelector('#questionHeader');
 	showQuestion();
 	setUpTimer();
 }
