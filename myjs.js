@@ -18,7 +18,7 @@ let question5Options = ["8 feet", "15 feet", "10 feet", "6 feet", "12 feet", "9 
 let question1 = new Question("Find the ballet dancer in the Flamingos. What coordinates is it located at?", question1Options, 5, "Images/findBalletDancerGrid.PNG");
 let question2 = new Question("What is the next number in the sequence shown above?", question2Options, 3, "Images/sequenceImage.PNG");
 let question3 = new Question("Which word is most similar to loquacious?", question3Options, 4, "Images/question3Image.PNG");
-let question4 = new Question("Which of the words are the odd one out?", question4Options, 2, "Images/question4Image.PNG");
+let question4 = new Question("Which of the words is the odd one out?", question4Options, 2, "Images/question4Image.PNG");
 let question5 = new Question("How far are they apart?", question5Options, 3, "Images/question5Image.PNG");
 
 let myQuestions = [question1, question2, question3, question4, question5];
